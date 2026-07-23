@@ -91,6 +91,7 @@ if areyousure.upper() =='Y':
 	resultdata=callrestapi(reqvalImg,reqtype,data=data,acceptType='application/json')
 	resultstate = resultdata.get("state")
 	resultjob=resultdata.get("links")[0]['uri']
+	#check status
 	if resultstate == "running": 
 		print("Warning: The job is taking longer than the requested wait time.  Access the following URI for job details: ")
 	elif resultstate == "failed": 
